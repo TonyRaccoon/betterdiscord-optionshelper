@@ -56,6 +56,7 @@ optionsExample.prototype.getSettingsPanel = function() {
 }
 
 // Tony's OptionsPlugin Helper /////////////////////////////////////
+// https://github.com/tony311/betterdiscord-optionshelper //////////
 optionsExample.prototype.getOptionsPlugin  = function(){
 	var OptionsPlugin                      = function(params){       // Constructor
 		params.defaults = params.defaults || {};

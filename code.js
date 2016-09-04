@@ -1,4 +1,5 @@
 // Tony's OptionsPlugin Helper /////////////////////////////////////
+// https://github.com/tony311/betterdiscord-optionshelper //////////
 // Change 'PLUGIN_CONSTRUCTOR_HERE' on the next line to your plugin constructor! (same thing you used for META/name at the top of the file)
 PLUGIN_CONSTRUCTOR_HERE.prototype.getOptionsPlugin  = function(){
 	var OptionsPlugin                      = function(params){       // Constructor
