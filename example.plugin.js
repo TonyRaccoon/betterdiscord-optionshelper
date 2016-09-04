@@ -69,8 +69,6 @@ optionsExample.prototype.getOptionsPlugin  = function(){
 			}
 		});
 		
-		console.log(params.defaults);
-		
 		this.options         = this._clone(params.defaults);
 		this.defaults        = this._clone(params.defaults);
 		this.plugin          = params.plugin;
@@ -89,7 +87,6 @@ optionsExample.prototype.getOptionsPlugin  = function(){
 		params.plugin.observer = function(e){
 			if (e.removedNodes[0] && e.removedNodes[0].id == "bd-psm-id") {
 				$(document).off("keydown.optionsplugin").off("mouseup.optionsplugin").off("mousemove.optionsplugin");
-				console.log("settings window closed");
 			}
 			
 			if (self.oldObserver) self.oldObserver.bind(self.plugin,e)();
