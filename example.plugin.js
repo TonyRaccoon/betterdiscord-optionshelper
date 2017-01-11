@@ -21,13 +21,14 @@ optionsExample.prototype.start          = function() {
 		plugin:      this,
 		storageKey:  "options-test",
 		defaults:    {
-			text:     {value:"Text", type:"text",   label:"Some text",  help:"This is some help text under the label"},
-			number:   {value:50,     type:"number", label:"A number",   help:"This is some help text under the label"},
-			range:    {value:50,     type:"range",  label:"A range", min:0, max:100, step:1,  help:"This is some help text under the label" },
-			range_10: {value:50,     type:"range",  label:"A range", min:0, max:100, step:10, help:"This is some help text under the label" },
-			range_5s: {value:50,     type:"range",  label:"A range", min:5, max:95,  step:5,  help:"This is some help text under the label" },
-			toggle:   {value:true,   type:"toggle", label:"A toggle",   help:"This is some help text under the label"},
-			select:   {value:"One",  type:"select", label:"A dropdown", help:"This is some help text under the label", options:["One", "Two", "Three"]},
+			text:      {value:"Text", type:"text",   label:"Some text",  help:"This is some help text under the label"},
+			number:    {value:50,     type:"number", label:"A number",   help:"This is some help text under the label"},
+			range:     {value:50,     type:"range",  label:"A range", min:0, max:100, step:1,  help:"This is some help text under the label" },
+			range_10:  {value:50,     type:"range",  label:"A range", min:0, max:100, step:10, help:"This is some help text under the label" },
+			range_5s:  {value:50,     type:"range",  label:"A range", min:5, max:95,  step:5,  help:"This is some help text under the label" },
+			range_pct: {value:50,     type:"range",  label:"A range", min:5, max:95,  step:1, percent:true, help:"This is some help text under the label" },
+			toggle:    {value:true,   type:"toggle", label:"A toggle",   help:"This is some help text under the label"},
+			select:    {value:"One",  type:"select", label:"A dropdown", help:"This is some help text under the label", options:["One", "Two", "Three"]},
 		},
 		
 		onSave:function(key,value){
@@ -66,7 +67,7 @@ optionsExample.prototype.getOptionsPlugin = function(){
 				option.min = (option.min === undefined) ? 0 : option.min;
 				option.max = (option.max === undefined) ? 100 : option.max;
 				option.step = (option.step === undefined || option.step == 0) ? 1 : option.step;
-				option.percent = (option.percent === undefined) ? true : option.percent;
+				option.percent = (option.percent === undefined) ? false : option.percent;
 			}
 		});
 		
