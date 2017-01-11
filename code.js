@@ -87,8 +87,12 @@ PLUGIN_CONSTRUCTOR_HERE.prototype.getOptionsPlugin = function(){
 		
 		var self = this;
 		$.each(this.options, function(key, option){
-			if (self.options[key])
-				self.options[key].value = bdPluginStorage.get(self.storageKey, key);
+			if (self.options[key]) {
+				var value = bdPluginStorage.get(self.storageKey, key);
+				if (value !== null) {
+					self.options[key].value = value;
+				}
+			}
 		});
 	};
 	OptionsPlugin.prototype.reset          = function(){             // Reset options to defaults
